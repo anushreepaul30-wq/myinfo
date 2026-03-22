@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina Learning | Unlock Your Academic Potential</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .formula-layer {
+            pointer-events: none;
+            user-select: none;
+            z-index: 0;
+        }
+
+        .floating-formula {
+            position: absolute;
+            font-family: "Times New Roman", Times, serif;
+            font-style: italic;
+            opacity: 0.15;
+            white-space: nowrap;
+            transition: transform 0.1s ease-out;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                        <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                    </svg>
+                </div>
+                <span class="text-2xl font-bold tracking-tight text-slate-800">Lumina<span class="text-indigo-600">Learning</span></span>
+            </div>
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="#about" class="hover:text-indigo-600 transition">About</a>
+                <a href="#stats" class="hover:text-indigo-600 transition">Our Impact</a>
+                <a href="#contact" class="hover:text-indigo-600 transition">Contact</a>
+            </div>
+            <a href="#contact" class="bg-indigo-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-indigo-700 transition shadow-lg shadow-indigo-200">
+                Get Started
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden bg-white pt-20">
+        <!-- Floating Formulas Container -->
+        <div id="formula-container" class="formula-layer absolute inset-0">
+            <!-- These will be moved by JS on scroll -->
+            <div class="floating-formula text-3xl left-[10%] top-[20%]" data-speed="1.5">E = mc²</div>
+            <div class="floating-formula text-4xl right-[15%] top-[25%]" data-speed="-1.2">F = G(m₁m₂/r²)</div>
+            <div class="floating-formula text-2xl left-[20%] top-[45%]" data-speed="2">∫ x² dx = x³/3 + C</div>
+            <div class="floating-formula text-5xl right-[25%] top-[55%]" data-speed="-1.8">PV = nRT</div>
+            <div class="floating-formula text-3xl left-[5%] bottom-[20%]" data-speed="2.5">a² + b² = c²</div>
+            <div class="floating-formula text-4xl right-[10%] bottom-[15%]" data-speed="-2.2">∇ × E = -∂B/∂t</div>
+            <div class="floating-formula text-2xl left-[35%] top-[15%]" data-speed="1">λ = h/p</div>
+            <div class="floating-formula text-3xl right-[40%] bottom-[30%]" data-speed="-1.5">e = lim (1 + 1/n)ⁿ</div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
+                Master Any Subject with <br>
+                <span class="gradient-text">Personalized Tutoring</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Empowering students worldwide to bridge gaps, ignite curiosity, and achieve academic excellence through expert-led online sessions.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-indigo-600 text-white rounded-xl font-bold text-lg hover:bg-indigo-700 shadow-xl shadow-indigo-200 transition">
+                    Book a Free Trial
+                </a>
+                <a href="#about" class="w-full sm:w-auto px-8 py-4 bg-white border-2 border-slate-200 text-slate-700 rounded-xl font-bold text-lg hover:border-indigo-600 hover:text-indigo-600 transition">
+                    Learn More
+                </a>
+            </div>
+            <div class="mt-16 flex items-center justify-center space-x-4 text-sm text-slate-400">
+                <span class="flex items-center"><svg class="w-5 h-5 mr-1 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg> 500+ Expert Tutors</span>
+                <span class="flex items-center"><svg class="w-5 h-5 mr-1 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg> 24/7 Support</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute -top-10 -left-10 w-32 h-32 bg-indigo-100 rounded-full mix-blend-multiply opacity-70 animate-blob"></div>
+                    <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-purple-100 rounded-full mix-blend-multiply opacity-70 animate-blob animation-delay-2000"></div>
+                    <div class="relative bg-slate-200 rounded-3xl overflow-hidden aspect-video shadow-2xl">
+                        <!-- Placeholder for a real image -->
+                        <div class="absolute inset-0 bg-indigo-900/10 flex items-center justify-center">
+                            <svg class="w-20 h-20 text-indigo-600 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800" alt="Students studying" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-indigo-600 font-bold tracking-widest uppercase text-sm mb-4">Unlocking Potential</h2>
+                    <h3 class="text-4xl font-bold text-slate-900 mb-6 leading-tight">Helping Thousands of Students Achieve Their Dreams</h3>
+                    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                        At Lumina Learning, we believe that every student has a unique learning path. Our mission is to provide the tools, guidance, and mentorship needed to unlock hidden potential. 
+                    </p>
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                        By connecting students with world-class educators, we turn academic challenges into opportunities for growth. Whether it's mastering complex calculus or perfecting essay writing, our personalized approach has helped thousands of learners gain confidence and top-tier grades.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="mt-1 bg-indigo-100 p-1 rounded-full text-indigo-600">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                            </div>
+                            <span class="ml-3 font-semibold text-slate-700">Customized Learning Plans</span>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="mt-1 bg-indigo-100 p-1 rounded-full text-indigo-600">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                            </div>
+                            <span class="ml-3 font-semibold text-slate-700">Interactive Digital Classroom</span>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="mt-1 bg-indigo-100 p-1 rounded-full text-indigo-600">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                            </div>
+                            <span class="ml-3 font-semibold text-slate-700">Proven Success Methodologies</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="py-24 bg-slate-900 text-white relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 100 C 20 0 50 0 100 100" stroke="white" stroke-width="0.1" fill="none" />
+            </svg>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Our Global Reach</h2>
+                <p class="text-slate-400 text-lg">Delivering quality education without borders.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center p-8 stat-card rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
+                    <div class="text-5xl font-extrabold text-indigo-400 mb-2">50k+</div>
+                    <div class="text-slate-300 font-medium uppercase tracking-wider text-sm">Students Taught</div>
+                </div>
+                <div class="text-center p-8 stat-card rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
+                    <div class="text-5xl font-extrabold text-indigo-400 mb-2">120+</div>
+                    <div class="text-slate-300 font-medium uppercase tracking-wider text-sm">Countries Covered</div>
+                </div>
+                <div class="text-center p-8 stat-card rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
+                    <div class="text-5xl font-extrabold text-indigo-400 mb-2">80+</div>
+                    <div class="text-slate-300 font-medium uppercase tracking-wider text-sm">Subjects Offered</div>
+                </div>
+                <div class="text-center p-8 stat-card rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
+                    <div class="text-5xl font-extrabold text-indigo-400 mb-2">4.9/5</div>
+                    <div class="text-slate-300 font-medium uppercase tracking-wider text-sm">Average Rating</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-24 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden grid md:grid-cols-5">
+                <div class="md:col-span-2 bg-indigo-600 p-10 text-white flex flex-col justify-between">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6">Start Your Journey</h2>
+                        <p class="text-indigo-100 mb-8">Ready to see your grades soar? Fill out the form and our academic advisor will reach out to you within 24 hours.</p>
+                        <div class="space-y-6">
+                            <div class="flex items-center space-x-4">
+                                <div class="bg-indigo-500/50 p-2 rounded-lg">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                </div>
+                                <span>hello@luminalearning.com</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="bg-indigo-500/50 p-2 rounded-lg">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                </div>
+                                <span>London, UK | Remote Global</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-12 flex space-x-4">
+                        <div class="w-10 h-10 bg-indigo-500/50 rounded-full flex items-center justify-center cursor-pointer hover:bg-white hover:text-indigo-600 transition">
+                            <span class="font-bold">in</span>
+                        </div>
+                        <div class="w-10 h-10 bg-indigo-500/50 rounded-full flex items-center justify-center cursor-pointer hover:bg-white hover:text-indigo-600 transition">
+                            <span class="font-bold">f</span>
+                        </div>
+                        <div class="w-10 h-10 bg-indigo-500/50 rounded-full flex items-center justify-center cursor-pointer hover:bg-white hover:text-indigo-600 transition">
+                            <span class="font-bold">X</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-3 p-10">
+                    <form id="leadForm" class="space-y-6">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">First Name</label>
+                                <input type="text" placeholder="John" class="w-full px-4 py-3 rounded-xl bg-slate-100 border-transparent focus:bg-white focus:border-indigo-600 focus:ring-0 transition outline-none" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Last Name</label>
+                                <input type="text" placeholder="Doe" class="w-full px-4 py-3 rounded-xl bg-slate-100 border-transparent focus:bg-white focus:border-indigo-600 focus:ring-0 transition outline-none" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Email Address</label>
+                            <input type="email" placeholder="john@example.com" class="w-full px-4 py-3 rounded-xl bg-slate-100 border-transparent focus:bg-white focus:border-indigo-600 focus:ring-0 transition outline-none" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Subject of Interest</label>
+                            <select class="w-full px-4 py-3 rounded-xl bg-slate-100 border-transparent focus:bg-white focus:border-indigo-600 focus:ring-0 transition outline-none">
+                                <option>Mathematics</option>
+                                <option>Physics</option>
+                                <option>Chemistry</option>
+                                <option>Computer Science</option>
+                                <option>Languages</option>
+                                <option>Test Prep (SAT/ACT)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Message (Optional)</label>
+                            <textarea rows="4" placeholder="Tell us about your learning goals..." class="w-full px-4 py-3 rounded-xl bg-slate-100 border-transparent focus:bg-white focus:border-indigo-600 focus:ring-0 transition outline-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-4 rounded-xl hover:bg-indigo-700 transition shadow-lg shadow-indigo-100">
+                            Send Request
+                        </button>
+                    </form>
+                    <div id="successMessage" class="hidden mt-4 p-4 bg-green-100 text-green-700 rounded-xl text-center font-semibold">
+                        Thank you! We'll contact you shortly.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-6 md:mb-0">
+                    <div class="w-8 h-8 bg-indigo-600 rounded flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                        </svg>
+                    </div>
+                    <span class="text-xl font-bold tracking-tight text-slate-800">Lumina<span class="text-indigo-600">Learning</span></span>
+                </div>
+                <div class="flex space-x-8 text-slate-500 font-medium mb-6 md:mb-0">
+                    <a href="#" class="hover:text-indigo-600 transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-indigo-600 transition">Terms of Service</a>
+                    <a href="#" class="hover:text-indigo-600 transition">Cookies</a>
+                </div>
+                <div class="text-slate-400 text-sm">
+                    © 2026 Lumina Learning. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animation for formulas
+        window.addEventListener('scroll', () => {
+            const scrollY = window.pageYOffset;
+            const formulas = document.querySelectorAll('.floating-formula');
+            
+            formulas.forEach(formula => {
+                const speed = parseFloat(formula.getAttribute('data-speed'));
+                const xOffset = scrollY * speed * 0.1;
+                const yOffset = scrollY * speed * 0.05;
+                
+                // Add a small rotation for extra style
+                formula.style.transform = `translate(${xOffset}px, ${yOffset}px) rotate(${scrollY * 0.01 * speed}deg)`;
+            });
+        });
+
+        // Form handling
+        const form = document.getElementById('leadForm');
+        const successMessage = document.getElementById('successMessage');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            form.style.display = 'none';
+            successMessage.classList.remove('hidden');
+            
+            // Simple visual feedback without browser alerts
+            setTimeout(() => {
+                form.reset();
+                form.style.display = 'block';
+                successMessage.classList.add('hidden');
+            }, 5000);
+        });
+
+        // Smooth reveal on scroll for sections
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
